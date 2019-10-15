@@ -1,0 +1,241 @@
+.contacts {
+  padding: 0;
+}
+
+.contacts__wrapper-address {
+  width: @mobile-wrapper;
+  margin: 0 calc(50% - (@mobile-wrapper / 2));
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.contacts__title {
+  margin: 0;
+  margin-bottom: 25px;
+  font-size: 18px;
+  line-height: 30px;
+  font-weight: bold;
+}
+
+.contacts__list {
+  margin: 0;
+  margin-bottom: 37px;
+  font-size: 15px;
+  line-height: 30px;
+}
+
+.contacts__list-name {
+  display: inline-block;
+  vertical-align: top;
+  width: 72px;
+  word-wrap: break-word;
+  margin-bottom: 30px;
+}
+
+.contacts__list-description {
+  display: inline-block;
+  vertical-align: top;
+  width: 182px;
+  margin-left: 2px;
+  margin-bottom: 30px;
+  word-wrap: break-word;
+}
+
+.contacts__email {
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+  color: #000000;
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    height: 1px;
+    width: 100%;
+    background-color: #62d1ba;
+  }
+
+  &:hover,
+  &:focus {
+    color: #46c1ae;
+  }
+
+  &:hover::before,
+  &:focus::before {
+    background-color: #46c1ae;
+  }
+
+  &:active {
+    color: rgba(70, 193, 174, 0.3);
+  }
+
+  &:active::before {
+    background-color: rgba(70, 193, 174, 0.1);
+  }
+}
+
+.contacts__list-name:last-child {
+  margin-bottom: 0;
+}
+
+.contacts__list-description:last-child {
+  margin-bottom: 0;
+}
+
+.contacts__map {
+  border: none;
+  width: 100%;
+  background-image: url("../img/map-mobile@1x.jpg");
+  background-size: 322px;
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-color: #ffffff;
+  z-index: 0;
+
+  @media (min-resolution: @retina-dpi), (min-resolution: @retina-dppx) {
+    background-image: url("../img/map-mobile@2x.jpg");
+  }
+}
+
+.contacts__submit {
+  font-size: 18px;
+  margin-top: 35px;
+
+  &:hover,
+  &:focus {
+    color: #ffffff;
+    background-color: #444444;
+  }
+
+  &:active {
+    color: rgba(255, 255, 255, 0.3);
+  }
+}
+
+@media (min-width: @tablet-width) {
+  .contacts {
+    padding: 0;
+  }
+
+  .contacts__wrapper-address {
+    width: @tablet-wrapper;
+    margin: 0 calc(50% - (@tablet-wrapper / 2));
+  }
+
+  .contacts__title {
+    margin-left: -3px;
+    margin-bottom: 48px;
+    position: relative;
+    font-size: 43px;
+    line-height: 50px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      right: 4px;
+      width: 47px;
+      height: 82px;
+      background-image: url("../img/icon-flag.svg");
+      background-size: 47px 82px;
+      background-repeat: no-repeat;
+    }
+  }
+
+  .contacts__list {
+    margin-bottom: 56px;
+    font-size: 17px;
+  }
+
+  .contacts__list-name {
+    width: 70px;
+    margin-bottom: 0;
+  }
+
+  .contacts__list-description {
+    width: 254px;
+    margin-bottom: 0;
+  }
+
+  .contacts__map {
+    background-image: url("../img/map-tablet@1x.jpg");
+    background-size: 768px;
+
+    @media (min-resolution: @retina-dpi), (min-resolution: @retina-dppx) {
+      background-image: url("../img/map-tablet@2x.jpg");
+    }
+  }
+
+  .contacts__submit {
+    font-size: 17px;
+    width: 230px;
+    margin: 52px calc(50% - 115px) 0;
+  }
+}
+
+@media (min-width: @desktop-width) {
+  .contacts {
+    width: @desktop-wrapper;
+    margin: 0 calc(50% - (@desktop-wrapper / 2));
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+  }
+
+  .contacts__wrapper-address {
+    margin: 0;
+    padding: 0;
+    margin-left: 174px;
+    width: 348px;
+  }
+
+  .contacts__title {
+    margin: 0;
+    margin-top: 70px;
+    font-size: 53px;
+    line-height: 57px;
+
+    &::before {
+      top: calc(50% + 3px);
+      left: -109px;
+    }
+  }
+
+  .contacts__list {
+    font-size: 17px;
+    margin: 48px 0 80px 1px;
+  }
+
+  .contacts__list-name {
+    width: 72px;
+    margin-bottom: 30px;
+  }
+
+  .contacts__list-description {
+    width: 254px;
+    margin-bottom: 30px;
+  }
+
+  .contacts__map {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: calc(@desktop-wrapper/2);
+    background-image: url("../img/map-desktop@1x.jpg");
+    background-size: 525px;
+
+    @media (min-resolution: @retina-dpi), (min-resolution: @retina-dppx) {
+      background-image: url("../img/map-desktop@2x.jpg");
+    }
+  }
+
+  .contacts__submit {
+    font-size: 17px;
+    width: 230px;
+    margin: 0 3px;
+  }
+}
